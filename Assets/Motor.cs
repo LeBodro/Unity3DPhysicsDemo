@@ -4,38 +4,15 @@ using UnityEngine;
 
 public class Motor : MonoBehaviour
 {
-    public enum Direction
-    {
-        LEFT,
-        RIGHT,
-        STRAIGHT
-    }
 
     [SerializeField] WheelCollider[] wheels;
     [SerializeField] float power = 20f;
     [SerializeField] float steering = 30f;
     [SerializeField] float brake = 2f;
 
-    public void Steer(Direction direction)
+    public void Steer(float direction)
     {
-        switch (direction)
-        {
-            case Direction.STRAIGHT:
-                Steer(0f);
-                break;
-            case Direction.LEFT:
-                Steer(-steering);
-                break;
-            case Direction.RIGHT:
-                Steer(steering);
-                break;
-            default:
-                break;
-        }
-    }
-
-    void Steer(float angle)
-    {
+        var angle = steering * direction;
         foreach (var wheel in wheels)
         {
             wheel.steerAngle = angle;

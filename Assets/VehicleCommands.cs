@@ -6,22 +6,36 @@ public class VehicleCommands : MonoBehaviour
 {
     [SerializeField] Motor motor;
 
+    Vector3 initialPosition;
+
+    void Start()
+    {
+        initialPosition = transform.position;
+    }
+
     void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey("joystick 1 button 0"))
         {
             motor.Accelerate();
         }
-        else
+
+        if (Input.GetKey("joystick 1 button 1"))
         {
             motor.Brake();
         }
 
-        if (Input.GetKeyDown(KeyCode.A))
-            motor.Steer(Motor.Direction.LEFT);
-        else if (Input.GetKeyDown(KeyCode.D))
-            motor.Steer(Motor.Direction.RIGHT);
-        else if (Input.GetKeyDown(KeyCode.W))
-            motor.Steer(Motor.Direction.STRAIGHT);
+        if (Input.GetKey("joystick 1 button 2"))
+        {
+            ResetPosition();
+        }
+
+        motor.Steer(Input.GetAxis("Horizontal"));
+    }
+
+    void ResetPosition()
+    {
+        transform.position = initialPosition;
+        transform.rotation = Quaternion.identity;
     }
 }
