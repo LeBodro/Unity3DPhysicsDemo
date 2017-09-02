@@ -13,35 +13,39 @@ public class Motor : MonoBehaviour
     public void Steer(float direction)
     {
         var angle = steering * direction;
-        foreach (var wheel in wheels)
-        {
-            wheel.steerAngle = angle;
-        } 
-    }
-
-    public void TurnRight()
-    {
-        foreach (var wheel in wheels)
-        {
-            wheel.steerAngle = steering;
-        }
+        ForEachWheel((wheel) => wheel.steerAngle = angle);
     }
 
     public void Accelerate()
     {
-        foreach (var wheel in wheels)
-        {
-            wheel.brakeTorque = 0;
-            wheel.motorTorque += power;
-        }
+        ForEachWheel((wheel) => wheel.motorTorque = Mathf.Max(wheel.motorTorque + power, power));
+    }
+
+    public void EndTraction()
+    {
+        ForEachWheel((wheel) => wheel.motorTorque = 0);
+    }
+
+    public void Recede()
+    {
+        ForEachWheel((wheel) => wheel.motorTorque = Mathf.Min(wheel.motorTorque - power, -power));
     }
 
     public void Brake()
     {
+        ForEachWheel((wheel) => wheel.brakeTorque += brake);
+    }
+
+    public void EndBrake()
+    {
+        ForEachWheel((wheel) => wheel.brakeTorque = 0);
+    }
+
+    void ForEachWheel(System.Action<WheelCollider> doThis)
+    {
         foreach (var wheel in wheels)
         {
-            wheel.motorTorque = 0;
-            wheel.brakeTorque += brake;
+            doThis(wheel);
         }
     }
 }
