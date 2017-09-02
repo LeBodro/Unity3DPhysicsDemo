@@ -25,9 +25,9 @@ public class VehicleCommands : MonoBehaviour
             motor.EndTraction();
 
         if (Input.GetKey("joystick 1 button 1") || Input.GetKey(KeyCode.X))
-        {
             motor.Brake();
-        }
+        else
+            motor.EndBrake();
 
         if (Input.GetKey("joystick 1 button 2") || Input.GetKey(KeyCode.C))
         {

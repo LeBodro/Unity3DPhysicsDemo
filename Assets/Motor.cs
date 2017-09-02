@@ -6,19 +6,24 @@ public class Motor : MonoBehaviour
 {
 
     [SerializeField] WheelCollider[] wheels;
-    [SerializeField] float power = 20f;
-    [SerializeField] float steering = 30f;
-    [SerializeField] float brake = 2f;
+    [SerializeField] float acceleration = 20f;
+    [SerializeField] float maxRPM = 2000f;
+    [SerializeField] float maxSteering = 30f;
+    [SerializeField] float brake = 80f;
 
     public void Steer(float direction)
     {
-        var angle = steering * direction;
+        var angle = maxSteering * direction;
         ForEachWheel((wheel) => wheel.steerAngle = angle);
     }
 
     public void Accelerate()
     {
-        ForEachWheel((wheel) => wheel.motorTorque = Mathf.Max(wheel.motorTorque + power, power));
+        ForEachWheel((wheel) =>
+            {
+                if (wheel.motorTorque < maxRPM)
+                    wheel.motorTorque = Mathf.Max(wheel.motorTorque + acceleration, acceleration);
+            });
     }
 
     public void EndTraction()
@@ -28,7 +33,11 @@ public class Motor : MonoBehaviour
 
     public void Recede()
     {
-        ForEachWheel((wheel) => wheel.motorTorque = Mathf.Min(wheel.motorTorque - power, -power));
+        ForEachWheel((wheel) =>
+            {
+                if (wheel.motorTorque > -maxRPM)
+                    wheel.motorTorque = Mathf.Min(wheel.motorTorque - acceleration, -acceleration);
+            });
     }
 
     public void Brake()
