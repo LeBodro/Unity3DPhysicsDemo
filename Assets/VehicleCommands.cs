@@ -5,6 +5,7 @@ using UnityEngine;
 public class VehicleCommands : MonoBehaviour
 {
     [SerializeField] Motor motor;
+    [SerializeField] float heightOfMass = -0.5f;
 
     Vector3 initialPosition;
     Quaternion initialRotation;
@@ -13,6 +14,7 @@ public class VehicleCommands : MonoBehaviour
     {
         initialPosition = transform.position;
         initialRotation = transform.rotation;
+        GetComponent<Rigidbody>().centerOfMass = Vector3.up * heightOfMass;
     }
 
     void FixedUpdate()
