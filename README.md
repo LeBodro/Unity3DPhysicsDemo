@@ -8,12 +8,25 @@ Quelques exemples pour démontrer l'usage de la physique dans Unity.
 - Components (MonoBehaviour)
 
 ## La physique
+
+### Les bases
+- Settings
+- Layers (Couches)
+
+### Les composantes
 - Collider
 - Rigidbody
 - Hinge joint
 - Configurable Joint
 - Cloth
 - Particle System
+- WheelCollider
+- CharacterController
+
+### Le code
+- FixedUpdate vs Update
+- OnCollisionEnter/Exit, OnTriggerEnter/Exit
+- Rigidbody: Use the Force (AddForce)! Ou Move si kinematic.
 - [Compute shaders](https://docs.unity3d.com/560/Documentation/Manual/ComputeShaders.html)
 
 # Choses à faire pour la présentation
