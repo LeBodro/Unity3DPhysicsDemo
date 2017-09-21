@@ -8,10 +8,41 @@ Quelques exemples pour démontrer l'usage de la physique dans Unity.
 - Components (MonoBehaviour)
 
 ## La physique
+
+### Les bases
+- Settings
+- Layers (Couches)
+
+### Les composantes
 - Collider
 - Rigidbody
 - Hinge joint
 - Configurable Joint
 - Cloth
 - Particle System
+- WheelCollider
+- CharacterController
+
+### Le code
+- FixedUpdate vs Update
+- OnCollisionEnter/Exit, OnTriggerEnter/Exit
+- Rigidbody: Use the Force (AddForce)! Ou Move si kinematic.
 - [Compute shaders](https://docs.unity3d.com/560/Documentation/Manual/ComputeShaders.html)
+
+# Choses à faire pour la présentation
+## Analyse d’un moteur de jeu
+
+### Donnez d’abord une vue d’ensemble du moteur :
+
+- [ ] developpeur: **Unity Technologies**
+- [ ] type de license: [**Personal, Plus and Pro**](https://unity3d.com/unity)
+- [ ] principaux jeux l’utilisant: [**SUPERHOT, Ori and the Blind Forest, I Am Bread**](https://unity3d.com/showcase/gallery)
+- [ ] etc (bureaux à travers le monde, historique de la physique 3D dans ce moteur).
+
+### Presentez les principales fonctionnalitéees du moteur ainsi que ses limitations. Vous devez illustrer avec des images, des videos et des exemples.
+
+- [ ] Fonctionnalités
+- [ ] Limitations
+- [ ] Images
+- [ ] Vidéos
+- [ ] Exemples
