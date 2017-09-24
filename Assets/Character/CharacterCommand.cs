@@ -72,7 +72,7 @@ public class CharacterCommand : MonoBehaviour
     {
         bool jumpCooldownOver = (Time.time - jumpTimeStamp) >= minJumpInterval;
 
-        if (jumpCooldownOver && character.isGrounded && Input.GetKey(KeyCode.Space))
+        if (jumpCooldownOver && character.isGrounded && Input.GetAxis("Fire1") > 0)
         {
             jumpTimeStamp = Time.time;
             character.SimpleMove(Vector3.up * jumpForce);
