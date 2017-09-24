@@ -1,50 +1,27 @@
 # Physique 3D dans Unity
-Quelques exemples pour démontrer l'usage de la physique dans Unity.
+Quelques exemples pour démontrer l'usage de la physique dans Unity (version 5.6).
 
 Les démonstrations de ce projet sont des expérimentations dans le but d'avoir les connaissance nécessaire à créer [une présentation sur la physique de Unity](https://docs.google.com/presentation/d/1cEp7v0rYgRKL1XR2oStYawRknT3foLZcdEpbUECgTGU/edit?usp=sharing) et à la ponctuer.
 
-## Quelques concepts de base
-- Assets
-- Scène et Hiérarchie
-- Game Objects et Inspecteur
-- Components (MonoBehaviour)
 
-## La physique
+## Contrôle
+Les véhicules et personnages présents sont fait pour être contrôllés à l'aide d'une manette. Pour de meilleurs résultats, utiliser une manette de XBox sur l'OS Windows.
 
-### Les bases
-- Settings
-- Layers (Couches)
+### Personnage
+- **Joystick de gauche :** se déplacer
+- **Bouton 'A' :** sauter
 
-### Les composantes
-- Collider
-- Rigidbody
-- Hinge joint
-- Configurable Joint
-- Cloth
-- Particle System
-- WheelCollider
-- CharacterController
+### Véhicule
+- **Joystick de gauche :** tourner
+- **Bouton 'A' :** accélérer
+- **Bouton 'B' :** freiner
+- **Bouton 'Y' :** reculer
+- **Bouton 'X' :** réinitialiser la position
 
-### Le code
-- FixedUpdate vs Update
-- OnCollisionEnter/Exit, OnTriggerEnter/Exit
-- Rigidbody: Use the Force (AddForce)! Ou Move si kinematic.
-- [Compute shaders](https://docs.unity3d.com/560/Documentation/Manual/ComputeShaders.html)
 
-# Choses à faire pour la présentation
-## Analyse d’un moteur de jeu
+## Scènes
+- **main** contient toutes les démonstrations.
+- **drive** contient un vaste terrain et un véhicule pour mieux démontrer l'usage du _Wheel Collider_ que dans la scène _main_.
 
-### Donnez d’abord une vue d’ensemble du moteur :
+**À faire :** Présentez les principales fonctionnalitéees du moteur ainsi que ses limitations. Vous devez illustrer avec des images, des videos et des exemples.
 
-- [ ] developpeur: **Unity Technologies**
-- [ ] type de license: [**Personal, Plus and Pro**](https://unity3d.com/unity)
-- [ ] principaux jeux l’utilisant: [**SUPERHOT, Ori and the Blind Forest, I Am Bread**](https://unity3d.com/showcase/gallery)
-- [ ] etc (bureaux à travers le monde, historique de la physique 3D dans ce moteur).
-
-### Presentez les principales fonctionnalitéees du moteur ainsi que ses limitations. Vous devez illustrer avec des images, des videos et des exemples.
-
-- [ ] Fonctionnalités
-- [ ] Limitations
-- [ ] Images
-- [ ] Vidéos
-- [ ] Exemples
