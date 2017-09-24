@@ -1,16 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class PlatformColliderMover : MonoBehaviour {
+public class PlatformColliderMover : MonoBehaviour
+{
+    [SerializeField] float rotationPerSecond = 5f;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    void Update()
+    {
+        var frameRotation = rotationPerSecond * Time.fixedDeltaTime;
+        Transformation movement = new Rotation(Vector3.up, frameRotation * Mathf.Deg2Rad);
+
+        transform.position = movement.ApplyTo(transform.position);
+        transform.eulerAngles -= frameRotation * Vector3.up;
+    }
 }
