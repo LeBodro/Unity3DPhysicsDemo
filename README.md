@@ -1,6 +1,8 @@
 # Physique 3D dans Unity
 Quelques exemples pour démontrer l'usage de la physique dans Unity.
 
+Les démonstrations de ce projet sont des expérimentations dans le but d'avoir les connaissance nécessaire à créer [une présentation sur la physique de Unity](https://docs.google.com/presentation/d/1cEp7v0rYgRKL1XR2oStYawRknT3foLZcdEpbUECgTGU/edit?usp=sharing) et à la ponctuer.
+
 ## Quelques concepts de base
 - Assets
 - Scène et Hiérarchie
