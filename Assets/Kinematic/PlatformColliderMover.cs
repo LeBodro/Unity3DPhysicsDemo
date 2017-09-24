@@ -4,7 +4,7 @@ public class PlatformColliderMover : MonoBehaviour
 {
     [SerializeField] float rotationPerSecond = 5f;
 
-    void Update()
+    void FixedUpdate()
     {
         var frameRotation = rotationPerSecond * Time.fixedDeltaTime;
         Transformation movement = new Rotation(Vector3.up, frameRotation * Mathf.Deg2Rad);
