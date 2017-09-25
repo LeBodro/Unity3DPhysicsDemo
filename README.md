@@ -22,6 +22,3 @@ Les véhicules et personnages présents sont fait pour être contrôllés à l'a
 ## Scènes
 - **main** contient toutes les démonstrations.
 - **drive** contient un vaste terrain et un véhicule pour mieux démontrer l'usage du _Wheel Collider_ que dans la scène _main_.
-
-**À faire :** Présentez les principales fonctionnalitéees du moteur ainsi que ses limitations. Vous devez illustrer avec des images, des videos et des exemples.
-
