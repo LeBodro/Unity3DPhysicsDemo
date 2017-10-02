@@ -66,7 +66,6 @@ public class SceneNavigator : MonoBehaviour
     {
         bool currentlyDown = Input.GetAxis(axis) > 0.4f;
         bool justDown = !downAxes[axis] && currentlyDown;
-        Debug.Log(currentlyDown + " " + downAxes[axis] + " " + justDown);
         downAxes[axis] = currentlyDown;
         return justDown;
     }
