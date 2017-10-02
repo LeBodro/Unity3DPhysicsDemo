@@ -7,6 +7,14 @@ Les démonstrations de ce projet sont des expérimentations dans le but d'avoir 
 ## Contrôle
 Les véhicules et personnages présents sont fait pour être contrôllés à l'aide d'une manette. Pour de meilleurs résultats, utiliser une manette de XBox sur l'OS Windows.
 
+### Navigation
+- **Gachette de droite :** aller à la scène suivante
+- **Gachette de gauche :** retourner à la scène précédente
+- **Épaule de droite :** aller à la prochaine étape (quelques scènes seulement)
+
+### Objet déplaçable
+- **Joystick de gauche :** se déplacer
+
 ### Personnage
 - **Joystick de gauche :** se déplacer
 - **Bouton 'A' :** sauter
@@ -20,5 +28,6 @@ Les véhicules et personnages présents sont fait pour être contrôllés à l'a
 
 
 ## Scènes
+- Le dossier **DemoScenes** contient les différentes démos en plusieurs scènes. Aller dans la scène **Kinematic** permet d'utiliser la navigation entre les scènes.
 - **main** contient toutes les démonstrations.
 - **drive** contient un vaste terrain et un véhicule pour mieux démontrer l'usage du _Wheel Collider_ que dans la scène _main_.
